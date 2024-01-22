@@ -4,8 +4,9 @@ import Info from '@components/Info.astro'
 import About from '@components/About.astro'
 import Experience from '@components/Experience.astro'
 import Projects from '@components/Projects.astro'
----
 
+export const prerender = true
+---
 <Layout title="Juanjo Martínez - FullStack developer">	
 	<sections class="flex flex-col lg:flex-row lg:gap-5 max-w-6xl m-auto">
 		<section class="lg:basis-1/2">
