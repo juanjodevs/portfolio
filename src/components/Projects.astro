@@ -53,7 +53,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('./images/*')
             PROJECTS.map((project, index) => (
                 <a href={project.link} target="_blank" class={`flex ${index % 2 === 0 ? 'lg:flex-row flex-col' : 'lg:flex-row-reverse flex-col'} border border-teal-500 rounded hover:shadow-xl hover:bg-teal-500 hover:bg-opacity-20 hover:cursor-pointer`}>
                     <div class="basis-1/2 flex">
-                        <Image src={images[project.image]()} alt={project.image} class="object-cover"/>
+                        <Image src={images[project.image]()} alt={project.image} class="object-cover rounded-t lg:rounded"/>
                     </div>
                     <div class="flex flex-col basis-1/2">
                         <div class="text-center text-teal-500 font-bold py-2">{project.title}</div>
