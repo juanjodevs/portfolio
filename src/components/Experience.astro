@@ -1,0 +1,57 @@
+---
+import Briefcase from '@components/icons/briefcase.astro'
+
+const EXPERIENCE = [
+    {
+        date: '2023 - Actualidad',
+        title: 'Freelance',
+        text: '¡Disponible para colaborar contigo en tu próximo proyecto!'
+    },
+    {
+        date: '2021 - 2023',
+        title: 'Checkauto • Co-fundaror',
+        text: 'Primera aventura como fundador de una empresa y único responsable de todo lo relacionado con la parte técnica de la web.'
+    },
+    {
+        date: '2019 - 2021',
+        title: 'Zemobile • CTO',
+        text: 'Responsable de toda la parte técnica, liderando un equipo. Análisis de proyectos, división y asignación de trabajo considerando las mejores habilidades de cada miembro del equipo.'
+    },
+    {
+        date: '2017 - 2019',
+        title: 'Wallo • Programador',
+        text: 'Programador en esta fintech, aportando nuevas ideas y soluciones para facilitar el despliegue de la aplicación.'
+    },
+    {
+        date: '2015 - 2016',
+        title: 'Publicidad.net • Programador',
+        text: 'Responsable de los dashboards de clientes en lo que podían ver en tiempo real las métricas de sus anuncios.'
+    },
+    {
+        date: '2014 - 2015',
+        title: 'Gelbe Seiten Online • Programador',
+        text: 'Transformación completa de la web de PHP a Ruby on Rails con múltiples mejoras.'
+    },
+    {
+        date: '2009 - 2014',
+        title: 'Sevicios de consultoría independiente • Programador',
+        text: 'Creación de un producto web en Ruby on Rails a partir de una solución en Java existente.'
+    }
+]
+---
+<div id="experience">
+    <p class="flex gap-2 font-bold mb-5"><Briefcase/>Experiencia laboral</p>
+    <ol class="relative border-l border-teal-500">
+        {
+            EXPERIENCE.map((experience) => (
+                <li class="ml-5 p-5 transition easy-in-out hover:bg-teal-500 hover:bg-opacity-10 hover:shadow-xl rounded-xl ">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white"></div>
+                    <time class="mb-1 text-sm font-normal leading-none text-teal-500">{experience.date}</time>
+                    <h3 class="text-lg font-semibold text-white">{experience.title}</h3>
+                    <p class="mb-4 text-base font-normal text-gray-300">{experience.text}</p>
+                </li>
+
+            ))
+        }
+    </ol>
+</div>

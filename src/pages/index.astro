@@ -1,0 +1,20 @@
+---
+import Layout from '@layouts/Layout.astro'
+import Info from '@components/Info.astro'
+import About from '@components/About.astro'
+import Experience from '@components/Experience.astro'
+import Projects from '@components/Projects.astro'
+---
+
+<Layout title="Juanjo Martínez - FullStack developer">	
+	<sections class="flex flex-col lg:flex-row lg:gap-5 max-w-6xl m-auto">
+		<section class="lg:basis-1/2">
+			<Info/>
+		</section>
+		<section class="lg:basis-1/2">
+			<About />
+			<Experience />
+			<Projects />
+		</section>
+	</sections>
+</Layout>
