@@ -4,6 +4,6 @@ const { text, link, target } = Astro.props
 <div>
     <a class="inline-flex border border-teal-500 px-5 py-2 rounded hover:bg-teal-600 hover:border-white hover:bg-opacity-40 transition duration-500" href={link} target={target}>
         <slot/>
-        <span class="ml-2 font-bold">{text}</span>
+        <span class="ml-2 font-bold text-sm">{text}</span>
     </a>
 </div>
