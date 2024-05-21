@@ -4,49 +4,108 @@ import Info from '@components/Info.astro'
 import About from '@components/About.astro'
 import Experience from '@components/Experience.astro'
 import Projects from '@components/Projects.astro'
-
-export const prerender = true
 ---
-<Layout title="Juanjo Martínez - FullStack developer">	
-	<sections class="flex flex-col lg:flex-row lg:gap-5 max-w-6xl m-auto">
-		<section class="lg:basis-1/2">
-			<Info/>
-		</section>
-		<section class="lg:basis-1/2">
-			<About />
-			<Experience />
-			<Projects />
-		</section>
-	</sections>
+
+<Layout title="Juanjo Martínez - FullStack developer">
+  <sections class="flex flex-col lg:flex-row lg:gap-5 max-w-6xl m-auto">
+    <section class="lg:basis-1/2">
+      <Info />
+    </section>
+    <section class="lg:basis-1/2">
+      <About />
+      <Experience />
+      <Projects />
+    </section>
+  </sections>
 </Layout>
 <script>
-	const isInViewport = (element) => {
-		const rect = element.getBoundingClientRect();
-		return (
-			(rect.top >= 0 || rect.bottom >=0) ||
-			(
-				rect.top >= 0 &&
-				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-			)
-		);
-	}
-	const about = document.querySelector('#about')
-	const experience = document.querySelector('#experience')
-	const projects = document.querySelector('#projects')
-	document.addEventListener('scroll', () => {
-		document.querySelector('#about_link').classList.remove('text-teal-500', 'border-b-teal-500', 'border', 'border-t-0', 'border-l-0', 'border-r-0', 'pr-32')
-		document.querySelector('#experience_link').classList.remove('text-teal-500', 'border-b-teal-500', 'border', 'border-t-0', 'border-l-0', 'border-r-0', 'pr-32')
-		document.querySelector('#projects_link').classList.remove('text-teal-500', 'border-b-teal-500', 'border', 'border-t-0', 'border-l-0', 'border-r-0', 'pr-32')
-		if(isInViewport(about)){
-			document.querySelector('#about_link').classList.add('text-teal-500', 'border-b-teal-500', 'border', 'border-t-0', 'border-l-0', 'border-r-0', 'pr-32')
-		}else{
-			if(isInViewport(experience)){
-			document.querySelector('#experience_link').classList.add('text-teal-500', 'border-b-teal-500', 'border', 'border-t-0', 'border-l-0', 'border-r-0', 'pr-32')
-			}else{
-				if(isInViewport(projects)){
-					document.querySelector('#projects_link').classList.add('text-teal-500', 'border-b-teal-500', 'border', 'border-t-0', 'border-l-0', 'border-r-0', 'pr-32')
-				}
-			}
-		}		
-	})
+  const isInViewport = (element) => {
+    const rect = element.getBoundingClientRect()
+    return (
+      rect.top >= 0 ||
+      rect.bottom >= 0 ||
+      (rect.top >= 0 &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight))
+    )
+  }
+  const about = document.querySelector('#about')
+  const experience = document.querySelector('#experience')
+  const projects = document.querySelector('#projects')
+  document.addEventListener('scroll', () => {
+    document
+      .querySelector('#about_link')
+      .classList.remove(
+        'text-teal-500',
+        'border-b-teal-500',
+        'border',
+        'border-t-0',
+        'border-l-0',
+        'border-r-0',
+        'pr-32'
+      )
+    document
+      .querySelector('#experience_link')
+      .classList.remove(
+        'text-teal-500',
+        'border-b-teal-500',
+        'border',
+        'border-t-0',
+        'border-l-0',
+        'border-r-0',
+        'pr-32'
+      )
+    document
+      .querySelector('#projects_link')
+      .classList.remove(
+        'text-teal-500',
+        'border-b-teal-500',
+        'border',
+        'border-t-0',
+        'border-l-0',
+        'border-r-0',
+        'pr-32'
+      )
+    if (isInViewport(about)) {
+      document
+        .querySelector('#about_link')
+        .classList.add(
+          'text-teal-500',
+          'border-b-teal-500',
+          'border',
+          'border-t-0',
+          'border-l-0',
+          'border-r-0',
+          'pr-32'
+        )
+    } else {
+      if (isInViewport(experience)) {
+        document
+          .querySelector('#experience_link')
+          .classList.add(
+            'text-teal-500',
+            'border-b-teal-500',
+            'border',
+            'border-t-0',
+            'border-l-0',
+            'border-r-0',
+            'pr-32'
+          )
+      } else {
+        if (isInViewport(projects)) {
+          document
+            .querySelector('#projects_link')
+            .classList.add(
+              'text-teal-500',
+              'border-b-teal-500',
+              'border',
+              'border-t-0',
+              'border-l-0',
+              'border-r-0',
+              'pr-32'
+            )
+        }
+      }
+    }
+  })
 </script>

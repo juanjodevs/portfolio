@@ -8,33 +8,65 @@ import Linkedin from '@components/icons/linkedin.astro'
 
 import ProfilePhoto from '@components/images/juanjo.png'
 ---
+
 <article class="lg:sticky top-10">
-    <h1 class="text-6xl font-bold">Juanjo Martínez</h1>
-    <h2 class="text-xl mt-2">Desarrollador FullStack</h2>
-    <div class="mt-10 leading-5 max-w-xs">
-        <p>Más de <span class="text-teal-500">13 años de experiencia.</span></p>
-        <p><span class="text-teal-500">Desarrollando</span> y <span class="text-teal-500">liderando</span> proyectos web.</p>
-        <p>De <span class="text-teal-500">Barcelona</span>, España.</p>
+  <h1 class="text-6xl font-bold">Juanjo Martínez</h1>
+  <h2 class="text-xl mt-2">Desarrollador FullStack</h2>
+  <div class="mt-10 leading-5 max-w-xs">
+    <p>Más de <span class="text-teal-500">13 años de experiencia.</span></p>
+    <p>
+      <span class="text-teal-500">Desarrollando</span> y <span
+        class="text-teal-500">liderando</span
+      > proyectos web.
+    </p>
+    <p>De <span class="text-teal-500">Barcelona</span>, España.</p>
+  </div>
+  <div class="flex flex-col gap-10 mt-10">
+    <div
+      class="flex flex-col lg:flex-row-reverse basis-1/2 gap-10 justify-center lg:justify-end lg:gap-0"
+    >
+      <Image
+        src={ProfilePhoto}
+        alt="Juanjo profile photo"
+        width="192"
+        height="192"
+        class="rounded-full h-48 w-48 border-2 border-teal-500 shadow-xl self-center"
+        loading="eager"
+      />
+      <div class="basis-1/2 flex flex-col gap-5">
+        <SocicalIcon
+          text="juanjodevs@gmail.com"
+          link="mailto:juanjodevs@gmail.com"><Mail /></SocicalIcon
+        >
+        <SocicalIcon
+          text="Github"
+          link="https://github.com/juanjodevs"
+          target="_blank"><Github /></SocicalIcon
+        >
+        <SocicalIcon
+          text="LinkedIn"
+          link="https://www.linkedin.com/in/juanjomarcal/"
+          target="_blank"><Linkedin /></SocicalIcon
+        >
+      </div>
     </div>
-    <div class="flex flex-col gap-10 mt-10 lg:flex-row-reverse lg:gap-0">
-        <div class="flex basis-1/2 justify-center lg:justify-start">
-            <Image src={ProfilePhoto} alt="Juanjo profile photo" width="192" height="192" class="rounded-full h-48 w-48 border-2 border-teal-500 shadow-xl" loading="eager">
-        </div>
-        <div class="basis-1/2 flex flex-col gap-5">
-            <SocicalIcon text="juanjodevs@gmail.com" link="mailto:juanjodevs@gmail.com"><Mail/></SocicalIcon>
-            <SocicalIcon text="Github" link="https://github.com/juanjodevs" target="_blank"><Github/></SocicalIcon>
-            <SocicalIcon text="LinkedIn" link="https://www.linkedin.com/in/juanjomarcal/" target="_blank"><Linkedin/></SocicalIcon>
-        </div>
+    <div class="hidden lg:flex lg:flex-col gap-2">
+      <div class="w-80">
+        <p
+          id="about_link"
+          class="text-teal-500 border-b-teal-500 border border-t-0 border-l-0 border-r-0 pr-32"
+        >
+          <a href="/#about">Sobre mí</a>
+        </p>
+      </div>
+      <div class="w-80">
+        <p id="experience_link">
+          <a href="/#experience">Experiencia laboral</a>
+        </p>
+      </div>
+      <div class="w-80">
+        <p id="projects_link"><a href="/#projects">Proyectos</a></p>
+      </div>
     </div>
-    <div class="hidden lg:flex lg:flex-col mt-10 gap-2">
-        <div class="w-80">
-            <p id="about_link" class="text-teal-500 border-b-teal-500 border border-t-0 border-l-0 border-r-0 pr-32"><a href="/#about">Sobre mí</a></p>
-        </div>
-        <div class="w-80">
-            <p id="experience_link"><a href="/#experience">Experiencia laboral</a></p>
-        </div>
-        <div class="w-80">
-            <p id="projects_link"><a href="/#projects">Proyectos</a></p>
-        </div>
-    </div>
+  </div>
 </article>
