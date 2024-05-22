@@ -6,6 +6,23 @@ export default [
   {
     rules: {
       // override/add rules settings here, such as:
+      // "astro/no-set-html-directive": "error"
+      'quotes': [
+        'error',
+        'single'
+      ],
+      'semi': [
+        'error',
+        'never'
+      ],
+      'space-before-function-paren': [
+        'error',
+        'never'
+      ],
+      'comma-dangle': [
+        'error',
+        'never'
+      ]
     }
   }
 ]

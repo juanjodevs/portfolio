@@ -1,56 +1,56 @@
 ---
-import { Image } from "astro:assets";
-import Code from "@components/icons/code.astro";
+import { Image } from 'astro:assets'
+import Code from '@components/icons/code.astro'
 
 const PROJECTS = [
   {
-    title: "Checkauto",
+    title: 'Checkauto',
     description:
-      "Subasta tu coche entre más de 25 concesionarios cerca de ti en 24h.",
-    link: "https://checkautoapp.pages.dev/s",
-    image: "./images/checkauto.png",
-    tags: ["React", "ExpressJS", "AWS"],
+      'Subasta tu coche entre más de 25 concesionarios cerca de ti en 24h.',
+    link: 'https://checkautoapp.pages.dev/s',
+    image: './images/checkauto.png',
+    tags: ['React', 'ExpressJS', 'AWS']
   },
   {
-    title: "Carways",
-    description: "Concesionario de coches de ocasión en Viladecans.",
-    link: "https://carwaysmobility.es",
-    image: "./images/carways.png",
-    tags: ["React", "ExpressJS", "Nginx"],
+    title: 'Carways',
+    description: 'Concesionario de coches de ocasión en Viladecans.',
+    link: 'https://carwaysmobility.es',
+    image: './images/carways.png',
+    tags: ['React', 'ExpressJS', 'Nginx']
   },
   {
-    title: "Ana Almazo",
-    description: "Página personal de mi amiga psicóloga Ana Almazo",
-    link: "https://anaalmazo.juanjodevs.com",
-    image: "./images/anaalmazo.png",
-    tags: ["Astro", "Tailwind"],
+    title: 'Ana Almazo',
+    description: 'Página personal de mi amiga psicóloga Ana Almazo',
+    link: 'https://anaalmazo.juanjodevs.com',
+    image: './images/anaalmazo.png',
+    tags: ['Astro', 'Tailwind']
   },
   {
-    title: "Yet another Spotify clone",
+    title: 'Yet another Spotify clone',
     description:
-      "Clon de Spotify para probar principalmente las view transitions de Astro y Zustand",
-    link: "https://yasc.juanjodevs.com",
-    image: "./images/yasc.png",
-    tags: ["Astro", "Tailwind", "Zustand"],
+      'Clon de Spotify para probar principalmente las view transitions de Astro y Zustand',
+    link: 'https://yasc.juanjodevs.com',
+    image: './images/yasc.png',
+    tags: ['Astro', 'Tailwind', 'Zustand']
   },
   {
-    title: "Yet another X clone",
+    title: 'Yet another X clone',
     description:
-      "Clon de X para probar NextJS y Supabase como objetivo principal",
-    link: "https://yaxc.juanjodevs.com",
-    image: "./images/yaxc.png",
-    tags: ["NextJS", "Tailwind", "Supabase"],
-  },
-];
+      'Clon de X para probar NextJS y Supabase como objetivo principal',
+    link: 'https://yaxc.juanjodevs.com',
+    image: './images/yaxc.png',
+    tags: ['NextJS', 'Tailwind', 'Supabase']
+  }
+]
 
 const COLORS = [
-  "bg-teal-500 bg-teal-800",
-  "bg-yellow-500 bg-yellow-800",
-  "bg-purple-500 bg-purple-800",
-];
+  'bg-teal-500 bg-teal-800',
+  'bg-yellow-500 bg-yellow-800',
+  'bg-purple-500 bg-purple-800'
+]
 
 // Recipe from Astro docs -> https://docs.astro.build/en/recipes/dynamically-importing-images/
-const images = import.meta.glob<{ default: ImageMetadata }>("./images/*");
+const images = import.meta.glob<{ default: ImageMetadata }>('./images/*')
 ---
 
 <div id="projects">
@@ -63,7 +63,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>("./images/*");
         <a
           href={project.link}
           target="_blank"
-          class={`flex ${index % 2 === 0 ? "lg:flex-row flex-col" : "lg:flex-row-reverse flex-col"} border border-teal-500 rounded hover:shadow-xl hover:bg-teal-500 hover:bg-opacity-20 hover:cursor-pointer`}
+          class={`flex ${index % 2 === 0 ? 'lg:flex-row flex-col' : 'lg:flex-row-reverse flex-col'} border border-teal-500 rounded hover:shadow-xl hover:bg-teal-500 hover:bg-opacity-20 hover:cursor-pointer`}
         >
           <div class="basis-1/2 flex">
             <Image
@@ -94,4 +94,3 @@ const images = import.meta.glob<{ default: ImageMetadata }>("./images/*");
     }
   </div>
 </div>
-
