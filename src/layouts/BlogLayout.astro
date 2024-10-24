@@ -1,0 +1,28 @@
+---
+import '@fontsource-variable/inter'
+import Footer from '@components/Footer.astro'
+import Hotjar from '@components/Hotjar.astro'
+import './globalBlog.css'
+
+const { frontmatter } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Portfolio de Juanjo Martínez - Desarrollador FullStack"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{frontmatter.title}</title>
+    <Hotjar />
+  </head>
+  <body class="px-5 pt-5 antialiased text-neutral-100 container mx-auto">
+    <h1 class="text-center">{frontmatter.title}</h1>
+    <slot />
+    <Footer />
+  </body>
+</html>
