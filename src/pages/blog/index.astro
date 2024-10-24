@@ -1,9 +1,30 @@
 ---
+import { Image } from 'astro:assets'
 import Layout from '@layouts/Layout.astro'
+const posts = await Astro.glob('./*.mdx')
+const images = import.meta.glob('./images/*.{jpeg,jpg,png,gif}')
 ---
 
-<Layout title="Juanjo Martínez - FullStack developer">
-  <main class="container mx-auto">
-    <h1 class="text-5xl font-bold text-center">Blog</h1>
-  </main>
+<Layout title="Juanjo Martínez - Blog">
+  <div class="max-w-screen-lg mx-auto">
+    <h1 class="text-center">Blog</h1>
+    <div class="grid gap-5 grid-cols-1 md:grid-cols-3">
+      {
+        posts.map((post) => (
+          <a href={post.url} class="drop-shadow-lg">
+            <div class="relative">
+              <Image
+                class="rounded-t-xl"
+                src={images[`./images/${post.frontmatter.cover}`]()}
+                alt="post front image"
+              />
+              <div class="absolute bottom-0 bg-black/30 w-full px-5 py-2 backdrop-blur-sm font-bold text-xl">
+                {post.frontmatter.title}
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
 </Layout>
